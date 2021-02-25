@@ -93,11 +93,29 @@
                         </tr>
                     </tbody>
                 </table>
+                <form class="d-block d-sm-none .-none d-sm-block d-md-none">
+                    <p>Kalória kalkulátor:</p> 
+                    <input type="text" id="mennyiseg" placeholder="add meg a mennyiséget" > g <br>
+                    <input type="button" value="Számol" onclick="szamol()">
+                    
+                </form>
+                <div id="kiir">
+
+                </div>
             </div>
         </article>
     </main>
     <script src="bootstrap/js/jquery-3.5.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script >
+        function szamol() {
+           let mennyiseg = parseInt(document.getElementById("mennyiseg").value);
+           let minKalora =  Math.round(mennyiseg * 100 / 46);
+           let maxkaloria = Math.round( mennyiseg * 100 / 50);
+           document.getElementById("kiir").innerHTML=minKalora +" - "+ maxkaloria+" kcal" 
+        }
+
+    </script>
 </body>
 
 </html>
